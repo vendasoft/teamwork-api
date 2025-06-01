@@ -1,9 +1,11 @@
 <?php
 
-use Factories\TeamworkApiServiceFactory;
+namespace Teamwork\Providers;
+
+use Teamwork\Factories\TeamworkApiServiceFactory;
 use Illuminate\Support\ServiceProvider;
-use Interfaces\TeamworkApiInterface;
-use Services\TeamworkApiService;
+use Teamwork\Interfaces\TeamworkApiInterface;
+use Teamwork\Services\TeamworkApiService;
 
 class TeamworkApiServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Services;
+namespace Teamwork\Services;
 
 use Illuminate\Support\Facades\Http;
 

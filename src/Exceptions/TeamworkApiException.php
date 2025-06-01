@@ -1,6 +1,6 @@
 <?php
 
-namespace Exceptions;
+namespace Teamwork\Exceptions;
 
 use Exception;
 

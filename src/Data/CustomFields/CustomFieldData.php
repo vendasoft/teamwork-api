@@ -1,6 +1,6 @@
 <?php
 
-namespace Data\CustomFields;
+namespace Teamwork\Data\CustomFields;
 
 use Spatie\LaravelData\Data;
 

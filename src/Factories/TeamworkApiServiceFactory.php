@@ -1,8 +1,8 @@
 <?php
 
-namespace Factories;
+namespace Teamwork\Factories;
 
-use Services\TeamworkApiService;
+use Teamwork\Services\TeamworkApiService;
 use Illuminate\Support\Facades\Config;
 
 class TeamworkApiServiceFactory
@@ -11,8 +11,8 @@ class TeamworkApiServiceFactory
     {
         return new TeamworkApiService(
             siteUrl: Config::get('teamwork.site_url'),
-            username: Config::get('teamwork.site_url'),
-            password: Config::get('teamwork.site_url'),
+            username: Config::get('teamwork.username'),
+            password: Config::get('teamwork.password'),
         );
     }
 }

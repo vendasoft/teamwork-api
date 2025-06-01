@@ -1,9 +1,9 @@
 <?php
 
-namespace Facades;
+namespace Teamwork\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Interfaces\TeamworkApiInterface;
+use Teamwork\Interfaces\TeamworkApiInterface;
 
 class Teamwork extends Facade
 {

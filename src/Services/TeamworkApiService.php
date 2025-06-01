@@ -1,12 +1,12 @@
 <?php
 
-namespace Services;
+namespace Teamwork\Services;
 
 use Carbon\Carbon;
-use Data\CustomFields\CustomFieldData;
-use Data\Project\CompanyData;
-use Data\Project\ProjectData;
-use Exceptions\TeamworkApiException;
+use Teamwork\Data\CustomFields\CustomFieldData;
+use Teamwork\Data\Project\CompanyData;
+use Teamwork\Data\Project\ProjectData;
+use Teamwork\Exceptions\TeamworkApiException;
 use Illuminate\Support\Facades\Cache;
 
 class TeamworkApiService extends BaseHttpService

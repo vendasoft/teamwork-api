@@ -1,10 +1,10 @@
 <?php
 
-namespace Interfaces;
+namespace Teamwork\Interfaces;
 
-use Data\CustomFields\CustomFieldData;
-use Data\Project\ProjectData;
-use Exceptions\TeamworkApiException;
+use Teamwork\Data\CustomFields\CustomFieldData;
+use Teamwork\Data\Project\ProjectData;
+use Teamwork\Exceptions\TeamworkApiException;
 
 interface TeamworkApiInterface
 {

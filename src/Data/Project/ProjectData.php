@@ -1,6 +1,6 @@
 <?php
 
-namespace Data\Project;
+namespace Teamwork\Data\Project;
 
 use Spatie\LaravelData\Data;
 
