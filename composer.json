@@ -10,7 +10,7 @@
   },
   "require": {
     "php": "^8.0",
-    "illumina te/support": "^12.16",
+    "illuminate/support": "^12.16",
     "spatie/laravel-data": "^4.15"
   },
   "minimum-stability": "stable",
