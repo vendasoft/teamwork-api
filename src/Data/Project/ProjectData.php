@@ -8,6 +8,14 @@ class ProjectData extends Data
 {
     public function __construct(
         public object $activePages,
+        public int $id,
+        public string $name,
+        public object $company,
+        public string $status,
+        public string $subStatus,
+        public string $startAt,
+        public string $startDate,
+        public ?string $updatedAt,
         public ?bool $allowNotifyAnyone,
         public ?string $announcement,
         public ?int $categoryId,
@@ -22,9 +30,6 @@ class ProjectData extends Data
         public ?string $endDate,
         public ?int $financialBudgetId,
         public ?bool $harvestTimersEnabled,
-        public int $id,
-        public string $name,
-        public object $company,
         public ?int $ownedBy = null,
     ) {}
 }
