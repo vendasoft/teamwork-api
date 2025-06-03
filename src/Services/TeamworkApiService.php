@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Teamwork\Data\CustomFields\CustomFieldData;
 use Teamwork\Data\Project\CompanyData;
 use Teamwork\Data\Project\ProjectData;
+use Teamwork\Data\Tasks\TaskData;
 use Teamwork\Exceptions\TeamworkApiException;
 use Illuminate\Support\Facades\Cache;
 
@@ -122,7 +123,7 @@ class TeamworkApiService extends BaseHttpService
 
     /**
      * @param array|null $query
-     * @return array
+     * @return TaskData[]
      * @throws TeamworkApiException
      */
     public function getTasks(?array $query = []): array
@@ -142,7 +143,7 @@ class TeamworkApiService extends BaseHttpService
             $hasMore = $response->meta->page->hasMore;
         } while ($hasMore);
 
-        return $allTasks;
+        return TaskData::collect($allTasks);
     }
 
     /**
