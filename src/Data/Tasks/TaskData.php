@@ -63,6 +63,6 @@ class TaskData extends Data
         public ?object $timer = null,
         public ?string $updatedAt = null,
         public ?int $updatedBy = null,
-        public ?array $workflowstages = null,
+        public ?array $workflowStages = null,
     ) {}
 }
