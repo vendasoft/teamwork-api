@@ -11,6 +11,7 @@ class ProjectData extends Data
         public int $id,
         public string $name,
         public object $company,
+        public bool $isBillable,
         public ?string $status,
         public ?string $subStatus,
         public ?string $startAt,
@@ -31,5 +32,6 @@ class ProjectData extends Data
         public ?int $financialBudgetId,
         public ?bool $harvestTimersEnabled,
         public ?int $ownedBy = null,
+
     ) {}
 }
