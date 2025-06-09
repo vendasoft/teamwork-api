@@ -3,6 +3,7 @@
 namespace Teamwork\Interfaces;
 
 use Teamwork\Data\CustomFields\CustomFieldData;
+use Teamwork\Data\People\PeopleDetailData;
 use Teamwork\Data\Project\ProjectData;
 use Teamwork\Exceptions\TeamworkApiException;
 
@@ -12,6 +13,11 @@ interface TeamworkApiInterface
      * @throws TeamworkApiException
      */
     public function getUsers(): array;
+
+    /**
+     * @throws TeamworkApiException
+     */
+    public function getUsersDetail(int $peopleId): PeopleDetailData;
 
     /**
      * @throws TeamworkApiException

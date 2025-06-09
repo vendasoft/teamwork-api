@@ -4,6 +4,7 @@ namespace Teamwork\Services;
 
 use Carbon\Carbon;
 use Teamwork\Data\CustomFields\CustomFieldData;
+use Teamwork\Data\People\PeopleDetailData;
 use Teamwork\Data\Project\CompanyData;
 use Teamwork\Data\Project\ProjectData;
 use Teamwork\Data\Tasks\TaskData;
@@ -30,6 +31,18 @@ class TeamworkApiService extends BaseHttpService
         } while ($hasMore);
 
         return $allUsers;
+    }
+
+    /**
+     * @throws TeamworkApiException
+     */
+    public function getUserDetail(int $peopleId): PeopleDetailData
+    {
+        $response = $this->get("/projects/api/v2/people/{$peopleId}.json");
+        if($response->STATUS !== "OK"){
+            throw new TeamworkApiException($response->STATUS);
+        }
+        return PeopleDetailData::from($response->person);
     }
 
     /**
