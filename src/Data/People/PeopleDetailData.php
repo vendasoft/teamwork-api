@@ -21,7 +21,6 @@ class PeopleDetailData extends Data
         public string $privateNotes,
         public string $privateNotesText,
         public object $permissions,
-        public string $userInvitedDate,
         public string $lastLogin,
         public string $createdAt,
         public string $lastChangedOn,
@@ -67,5 +66,6 @@ class PeopleDetailData extends Data
         public ?object $skills,
         public bool $documentEditorInstalled,
         public bool $hasDeskAccount,
+        public ?string $userInvitedDate = null,
     ) {}
 }
