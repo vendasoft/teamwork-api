@@ -17,7 +17,7 @@ interface TeamworkApiInterface
     /**
      * @throws TeamworkApiException
      */
-    public function getUsersDetail(int $peopleId): PeopleDetailData;
+    public function getUserDetail(int $peopleId): PeopleDetailData;
 
     /**
      * @throws TeamworkApiException
