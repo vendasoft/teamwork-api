@@ -17,7 +17,6 @@ class PeopleDetailData extends Data
         public string $userInvitedStatus,
         public ?string $avatarUrl,
         public int $lengthOfDay,
-        public object $workingHours,
         public string $privateNotes,
         public string $privateNotesText,
         public object $permissions,
@@ -66,6 +65,7 @@ class PeopleDetailData extends Data
         public ?object $skills,
         public bool $documentEditorInstalled,
         public bool $hasDeskAccount,
+        public ?object $workingHours = null,
         public ?string $userInvitedDate = null,
     ) {}
 }
