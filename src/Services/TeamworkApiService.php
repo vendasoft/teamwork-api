@@ -21,7 +21,6 @@ class TeamworkApiService extends BaseHttpService
         $allUsers = [];
         $query['pageSize'] = 300;
         $query['page'] = 1;
-
         do {
             $response = $this->get('/projects/api/v3/people', query: $query);
             $this->handleError($response, '/projects/api/v3/people');
@@ -38,7 +37,12 @@ class TeamworkApiService extends BaseHttpService
      */
     public function getUserDetail(int $peopleId): PeopleDetailData
     {
-        $response = $this->get("/projects/api/v2/people/{$peopleId}.json");
+        $response = $this->get(
+            "/projects/api/v2/people/{$peopleId}.json",
+            query: [
+                'fullprofile' => '1',
+            ]
+        );
         if($response->STATUS !== "OK"){
             throw new TeamworkApiException($response->STATUS);
         }
