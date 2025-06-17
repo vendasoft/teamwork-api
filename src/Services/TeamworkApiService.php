@@ -8,6 +8,7 @@ use Teamwork\Data\People\PeopleDetailData;
 use Teamwork\Data\Project\CompanyData;
 use Teamwork\Data\Project\ProjectData;
 use Teamwork\Data\Tasks\TaskData;
+use Teamwork\Data\Tasks\TaskDataV2;
 use Teamwork\Exceptions\TeamworkApiException;
 use Illuminate\Support\Facades\Cache;
 
@@ -171,7 +172,7 @@ class TeamworkApiService extends BaseHttpService
     public function getTasksV2(?array $query = []): array
     {
         $query = array_merge($query, [
-            'pageSize' => 500,
+            'pageSize' => 250,
             'page' => 1,
         ]);
 
@@ -185,7 +186,7 @@ class TeamworkApiService extends BaseHttpService
             $hasMore = $response->meta->page->hasMore;
         } while ($hasMore);
 
-        return TaskData::collect($allTasks);
+        return TaskDataV2::collect($allTasks);
     }
 
 
