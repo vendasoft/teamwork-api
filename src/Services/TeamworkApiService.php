@@ -164,6 +164,33 @@ class TeamworkApiService extends BaseHttpService
     }
 
     /**
+     * @param array|null $query
+     * @return TaskData[]
+     * @throws TeamworkApiException
+     */
+    public function getTasksV2(?array $query = []): array
+    {
+        $query = array_merge($query, [
+            'pageSize' => 500,
+            'page' => 1,
+        ]);
+
+        $allTasks = [];
+
+        do {
+            $response = $this->get('/projects/api/v2/tasks.json', query: $query);
+            $this->handleError($response, '/projects/api/v2/tasks.json');
+            $allTasks = array_merge($allTasks, $response->tasks);
+            $query['page'] = $query['page'] + 1;
+            $hasMore = $response->meta->page->hasMore;
+        } while ($hasMore);
+
+        return TaskData::collect($allTasks);
+    }
+
+
+
+    /**
      * @param int $taskId
      * @param array|null $query
      * @return array

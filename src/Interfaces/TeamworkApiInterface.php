@@ -52,6 +52,11 @@ interface TeamworkApiInterface
     /**
      * @throws TeamworkApiException
      */
+    public function getTasksV2(?array $query = []): array;
+
+    /**
+     * @throws TeamworkApiException
+     */
     public function getAllSubtaskByTaskId(int $taskId, ?array $query = []): array;
 
     /**
