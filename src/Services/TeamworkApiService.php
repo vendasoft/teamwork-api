@@ -183,7 +183,7 @@ class TeamworkApiService extends BaseHttpService
             $this->handleError($response, '/projects/api/v2/tasks.json');
             $allTasks = array_merge($allTasks, $response->tasks);
             $query['page'] = $query['page'] + 1;
-            $hasMore = $response->meta->page->hasMore;
+            $hasMore = count($response->tasks) === 250;
         } while ($hasMore);
 
         return TaskDataV2::collect($allTasks);
