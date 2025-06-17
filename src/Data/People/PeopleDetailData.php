@@ -56,7 +56,7 @@ class PeopleDetailData extends Data
         public bool $twoFactorAuthEnabled,
         public bool $isClientUser,
         public bool $isServiceAccount,
-        public ?int $utilizationTarget,
+        public ?float $utilizationTarget,
         public string $firstName,
         public string $lastName,
         public string $mentionName,
