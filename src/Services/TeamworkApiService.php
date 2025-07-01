@@ -11,6 +11,7 @@ use Teamwork\Data\Tasks\TaskData;
 use Teamwork\Data\Tasks\TaskDataV2;
 use Teamwork\Exceptions\TeamworkApiException;
 use Illuminate\Support\Facades\Cache;
+use Teamwork\Exceptions\TeamworkNullResponseException;
 
 class TeamworkApiService extends BaseHttpService
 {
@@ -289,7 +290,7 @@ class TeamworkApiService extends BaseHttpService
      * @param string|null $url
      * @param bool|null $nullResponse
      * @return void
-     * @throws TeamworkApiException
+     * @throws TeamworkNullResponseException|TeamworkApiException
      */
     protected function handleError(?object $response, ?string $url = '', ?bool $nullResponse = false): void
     {
@@ -297,7 +298,7 @@ class TeamworkApiService extends BaseHttpService
             if ($nullResponse) {
                 return;
             }
-            throw new TeamworkApiException("Response from TeamworkAPI is null. Endpoint {$url}");
+            throw new TeamworkNullResponseException("Response from TeamworkAPI is null. Endpoint {$url}");
         }
 
         if (! empty($response->errors)) {
