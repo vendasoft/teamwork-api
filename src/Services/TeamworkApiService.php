@@ -53,7 +53,7 @@ class TeamworkApiService extends BaseHttpService
             if(count($response->teams) === 50){
                 $hasNext = true;
             }
-            $allTeams = array_merge($allTeams, $response->people);
+            $allTeams = array_merge($allTeams, $response->teams);
             $query['page'] += 1;
         } while ($hasNext);
         return $allTeams;
