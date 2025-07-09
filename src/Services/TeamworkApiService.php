@@ -34,6 +34,22 @@ class TeamworkApiService extends BaseHttpService
         return $allUsers;
     }
 
+    public function getUsersV1()
+    {
+        $allUsers = [];
+        $query['pageSize'] = 300;
+        $query['page'] = 1;
+        $query['includeCompanyTeams'] = true;
+        do {
+            $response = $this->get('/teams.json', query: $query);
+            $this->handleError($response, '/teams.json');
+            $allUsers = array_merge($allUsers, $response->people);
+            $query['page'] += 1;
+            $hasMore = $response->meta->page->hasMore;
+        } while ($hasMore);
+        return $allUsers;
+    }
+
     /**
      * @throws TeamworkApiException
      */
