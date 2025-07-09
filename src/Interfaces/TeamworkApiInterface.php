@@ -17,6 +17,11 @@ interface TeamworkApiInterface
     /**
      * @throws TeamworkApiException
      */
+    public function getTeams(): array;
+
+    /**
+     * @throws TeamworkApiException
+     */
     public function getUserDetail(int $peopleId): PeopleDetailData;
 
     /**
